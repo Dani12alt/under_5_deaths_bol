@@ -66,7 +66,7 @@ Currently, the majority of deaths in children under 5 years of age are due to co
 
 Link 1: [Animated Figure](https://drive.google.com/file/d/1jKvjPcdLmWxSZFNBZgWIng_i6ZVeNveo/view?usp=sharing)
 
-Link 2: [Interactive Figure](https://dani12alt.github.io/under_5_death/cause_of_death.html)
+Link 2: [Interactive Figure](https://dani12alt.github.io/child_mort_interac_figure/cause_of_death.html)
 
 Mortality is expected to continue to decline in the future as shown in the @fig-forcast below.
 
