@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Linares D, Loayza E, Limachi D, Luna B">
+
+<title>Trends in child mortality</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Trends in child mortality</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">
+ <span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#database" id="toc-database" class="nav-link" data-scroll-target="#database">Database</a></li>
+  <li><a href="#studied-variables" id="toc-studied-variables" class="nav-link" data-scroll-target="#studied-variables">Studied variables</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data analysis</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Trends in child mortality</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Linares D, Loayza E, Limachi D, Luna B </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Mortality among children under the age of five is a serious public health problem, especially in low-income nations. According to the <a href="https://www.who.int/news-room/fact-sheets/detail/child-mortality">World Health Organization</a> (WHO), an estimated 5,4 million children under the age of five died in 2019, with the overwhelming of these fatalities happening in low-income nations. Many of these fatalities are preventable with access to basic healthcare and nutrition, making this a devastating and unacceptable reality.</p>
+<p>Malnutrition is one of the leading causes of infant mortality in low-income nations. WHO estimates that malnutrition causes to around 45 percent of mortality among children under the age of five. This is often the consequence of poverty, lack of access to nourishing food, and inadequate sanitation and hygiene standards. In addition, many children in low-income countries lack access to basic healthcare, such as immunizations and treatment for common childhood diseases like pneumonia and diarrhea.</p>
+<p>Lack of access to maternal healthcare is a key factor to child mortality in low-income nations, particularly among children under the age of five. Numerous women in these nations lack access to prenatal care, and many give birth at home without the support of skilled medical personnel. This may result in difficulties during delivery that are deadly for both mother and child.</p>
+<p>In addition to malnutrition and lack of access to maternal healthcare, infectious illnesses such as malaria, measles, and HIV/AIDS are also primary causes of death among children under the age of 5. Because these reasons are often intertwined and may intensify one another, it is essential that attempts to address them be coordinated and holistic.</p>
+<p>The <a href="http://www.healthdata.org/gbd.">Global Burden of Disease</a> (GBD) database, which is managed by the Institute of Health Metrics and Evaluation (IHME) at the University of Washington, is a significant resource for comprehending the effect of mortality among children under the age of five in low-income nations. The GBD database contains information on the causes of death in various nations, as well as the risk factors and treatments linked with these fatalities. This information may be used to guide the formulation of policies and programs, as well as to track progress over time.</p>
+<p>The aim of this research is to track global trends in infant and child mortality, with a focus on Bolivia. Furthermore, we look for correlations between child mortality, income level, and the accessibility of high-quality medical care. Our presentation will conclude with an outline of the leading causes of infant mortality and forecasts for this metric.</p>
+</section>
+<section id="methods" class="level1">
+<h1>Methods</h1>
+<section id="database" class="level2">
+<h2 class="anchored" data-anchor-id="database">Database</h2>
+<p>Because it gathers so much data from so many nations over such a long time span, the <a href="https://ghdx.healthdata.org/gbd-2019">GBD</a> database is one of our primary resources.</p>
+</section>
+<section id="studied-variables" class="level2">
+<h2 class="anchored" data-anchor-id="studied-variables">Studied variables</h2>
+<p>In order to meet our objectives, the following variables were compiled:</p>
+<ul>
+<li><strong>Under-5 mortality</strong>, as expressed by probability of death</li>
+<li><strong>Location</strong>, 204 countries and territories and selected subnational locations</li>
+<li><strong>Year</strong>, time period of estimate.</li>
+<li><strong>Cause of death</strong>, disease responsible for death.</li>
+<li><strong>Socio-Demographic Index (SDI)</strong>, is a comprehensive index of developmental status that has a robust relationship to health outcomes. It is calculated as the geometric mean of the indices from zero to one for the total fertility rate among those under the age of twenty-five, the average level of education among those aged fifteen and above, and the lag distributed income per capita. A composite SDI of 0 would indicate the least developed area in terms of health, while an SDI of 1 would indicate the most developed area.</li>
+<li><strong>Healthcare Access and Quality (HAQ) Index</strong>, Using the arithmetic mean of scaled mortality-to-incidence ratios and risk-standardized death rates for 32 causes of death that should not occur in the context of timely and good health care</li>
+<li><strong>World Bank country classifications</strong> by income level <a href="https://blogs.worldbank.org/opendata/new-world-bank-country-classifications-income-level-2022-2023">2019</a></li>
+</ul>
+</section>
+<section id="data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis">Data analysis</h2>
+<p>The data were examined for normality using the Shapiro-Wilk test; since they did not present a normal distribution, a non-parametric approach was chosen.</p>
+<p>For descriptive statistics, the median and interquartile range will be reported. Data were compared between more than two unpaired groups by performing the Kruskal-Wallis rank-sum test. The degree of linear relationship between two variables will be assessed by the Spearman rank correlation coefficient. The results were considered significant at p &lt; 0.05. The machine-learning algorithm <a href="https://facebook.github.io/prophet/">Prophet</a> will be used to forecast the evolution of infant mortality in the future. Statistical analysis was performed using R software version 4.2.2 (R Development Core Team, 2022).</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>Figure 1.</p>
+<p><img src="images/death 2019_1.jpg" class="img-fluid" width="383"></p>
+<p>Figure 2.</p>
+<p><img src="images/evolution.jpg" class="img-fluid" width="342"></p>
+<p>Figure 3.</p>
+<p><img src="images/death vs sdi_1.jpg" class="img-fluid" width="326"></p>
+<p>Figure 4.</p>
+<p><img src="images/death vs haq_1.jpg" class="img-fluid" width="331"></p>
+<p>Figure 5.</p>
+<p><img src="images/death by income.jpg" class="img-fluid" width="327"></p>
+<p>Figure 6.</p>
+<p><img src="images/cause of death.jpg" class="img-fluid" width="475"></p>
+<p>Figure 7.</p>
+<p><a href="https://drive.google.com/file/d/1jKvjPcdLmWxSZFNBZgWIng_i6ZVeNveo/view?usp=sharing">Animated Figure</a></p>
+<p>Figure 8.</p>
+<p><a href="https://dani12alt.github.io/under_5_death/cause_of_death.html">Interactive Figure</a></p>
+<p>Figure 9.</p>
+<p><img src="images/Prediction.jpg" class="img-fluid" width="382"></p>
+<p><img src="images/Prediction_amp.jpg" class="img-fluid" width="389"></p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>In conclusion, infant mortality is a substantial public health problem, especially in low-income nations. The leading causes of these fatalities include malnutrition, lack of access to mother and child healthcare, neonatal causes, and infectious illnesses. The GBD database is a significant resource for understanding the effects of this problem and may be used to guide the creation of policies and programs. It is crucial that all countries collaborate to solve this problem, with a particular emphasis on providing access to basic healthcare, nutrition, and maternity care.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

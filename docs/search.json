@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Trends in child mortality",
+    "section": "",
+    "text": "Mortality among children under the age of five is a serious public health problem, especially in low-income nations. According to the World Health Organization (WHO), an estimated 5,4 million children under the age of five died in 2019, with the overwhelming of these fatalities happening in low-income nations. Many of these fatalities are preventable with access to basic healthcare and nutrition, making this a devastating and unacceptable reality.\nMalnutrition is one of the leading causes of infant mortality in low-income nations. WHO estimates that malnutrition causes to around 45 percent of mortality among children under the age of five. This is often the consequence of poverty, lack of access to nourishing food, and inadequate sanitation and hygiene standards. In addition, many children in low-income countries lack access to basic healthcare, such as immunizations and treatment for common childhood diseases like pneumonia and diarrhea.\nLack of access to maternal healthcare is a key factor to child mortality in low-income nations, particularly among children under the age of five. Numerous women in these nations lack access to prenatal care, and many give birth at home without the support of skilled medical personnel. This may result in difficulties during delivery that are deadly for both mother and child.\nIn addition to malnutrition and lack of access to maternal healthcare, infectious illnesses such as malaria, measles, and HIV/AIDS are also primary causes of death among children under the age of 5. Because these reasons are often intertwined and may intensify one another, it is essential that attempts to address them be coordinated and holistic.\nThe Global Burden of Disease (GBD) database, which is managed by the Institute of Health Metrics and Evaluation (IHME) at the University of Washington, is a significant resource for comprehending the effect of mortality among children under the age of five in low-income nations. The GBD database contains information on the causes of death in various nations, as well as the risk factors and treatments linked with these fatalities. This information may be used to guide the formulation of policies and programs, as well as to track progress over time.\nThe aim of this research is to track global trends in infant and child mortality, with a focus on Bolivia. Furthermore, we look for correlations between child mortality, income level, and the accessibility of high-quality medical care. Our presentation will conclude with an outline of the leading causes of infant mortality and forecasts for this metric."
+  },
+  {
+    "objectID": "index.html#database",
+    "href": "index.html#database",
+    "title": "Trends in child mortality",
+    "section": "Database",
+    "text": "Database\nBecause it gathers so much data from so many nations over such a long time span, the GBD database is one of our primary resources."
+  },
+  {
+    "objectID": "index.html#studied-variables",
+    "href": "index.html#studied-variables",
+    "title": "Trends in child mortality",
+    "section": "Studied variables",
+    "text": "Studied variables\nIn order to meet our objectives, the following variables were compiled:\n\nUnder-5 mortality, as expressed by probability of death\nLocation, 204 countries and territories and selected subnational locations\nYear, time period of estimate.\nCause of death, disease responsible for death.\nSocio-Demographic Index (SDI), is a comprehensive index of developmental status that has a robust relationship to health outcomes. It is calculated as the geometric mean of the indices from zero to one for the total fertility rate among those under the age of twenty-five, the average level of education among those aged fifteen and above, and the lag distributed income per capita. A composite SDI of 0 would indicate the least developed area in terms of health, while an SDI of 1 would indicate the most developed area.\nHealthcare Access and Quality (HAQ) Index, Using the arithmetic mean of scaled mortality-to-incidence ratios and risk-standardized death rates for 32 causes of death that should not occur in the context of timely and good health care\nWorld Bank country classifications by income level 2019"
+  },
+  {
+    "objectID": "index.html#data-analysis",
+    "href": "index.html#data-analysis",
+    "title": "Trends in child mortality",
+    "section": "Data analysis",
+    "text": "Data analysis\nThe data were examined for normality using the Shapiro-Wilk test; since they did not present a normal distribution, a non-parametric approach was chosen.\nFor descriptive statistics, the median and interquartile range will be reported. Data were compared between more than two unpaired groups by performing the Kruskal-Wallis rank-sum test. The degree of linear relationship between two variables will be assessed by the Spearman rank correlation coefficient. The results were considered significant at p < 0.05. The machine-learning algorithm Prophet will be used to forecast the evolution of infant mortality in the future. Statistical analysis was performed using R software version 4.2.2 (R Development Core Team, 2022)."
+  }
+]
