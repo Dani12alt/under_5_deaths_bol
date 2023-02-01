@@ -44,25 +44,25 @@ For descriptive statistics, the median and interquartile range will be reported.
 
 Mortality in children under 5 years of age has decreased considerably in recent decades. However, in some parts of the world, this indicator remains unacceptably high, as shown in @fig-map below.
 
-![Map of child mortality in 2019](images/death%202019_1.jpg){#fig-map width="302"}
+![Map of child mortality in 2019](images/death%202019_1.jpg){#fig-map width="578"}
 
 In Bolivia, infant mortality was historically high but has declined considerably in recent years, and it is now below the world average but still above the regional average, as shown in @fig-evolution.
 
-![Evolution of under-5 children probability of death, 1950 to 2019](images/evolution.jpg){#fig-evolution width="313"}
+![Evolution of under-5 children probability of death, 1950 to 2019](images/evolution.jpg){#fig-evolution width="512"}
 
 Infant mortality is related to nation development (as assessed by SDI) and access to excellent health care (as evaluated by HAQ). This relationship is shown in @fig-sdi and @fig-haq
 
-![Probability of death vs Socio-Demographic Index](images/death%20vs%20sdi_1.jpg){#fig-sdi width="291"}
+![Probability of death vs Socio-Demographic Index](images/death%20vs%20sdi_1.jpg){#fig-sdi width="497"}
 
-![Probability of death vs Healthcare Access and Quality Index](images/death%20vs%20haq_1.jpg){#fig-haq width="288"}
+![Probability of death vs Healthcare Access and Quality Index](images/death%20vs%20haq_1.jpg){#fig-haq width="504"}
 
 Bolivia is considered a lower middle-income country. As shown in @fig-anova, lower middle-income countries tend to have higher mortality than upper middle-income countries and high-income countries. We can also observe that the higher the country's income, the lower the child mortality rate.
 
-![Probability of death according World bank classification](images/death%20by%20income.jpg){#fig-anova width="288"}
+![Probability of death according World bank classification](images/death%20by%20income.jpg){#fig-anova width="525"}
 
 Currently, the majority of deaths in children under 5 years of age are due to congenital anomalies, as shown in @fig-causes. This was not always the case; as shown in [Link 1](https://drive.google.com/file/d/1jKvjPcdLmWxSZFNBZgWIng_i6ZVeNveo/view?usp=sharing) and [Link 2](https://dani12alt.github.io/under_5_death/cause_of_death.html), historically, the main cause was pneumonia and respiratory tract infections.
 
-![Causes of death in under-5 children, 2019](images/cause%20of%20death.jpg){#fig-causes width="386"}
+![Causes of death in under-5 children, 2019](images/cause%20of%20death.jpg){#fig-causes width="553"}
 
 Link 1: [Animated Figure](https://drive.google.com/file/d/1jKvjPcdLmWxSZFNBZgWIng_i6ZVeNveo/view?usp=sharing)
 
@@ -70,7 +70,7 @@ Link 2: [Interactive Figure](https://dani12alt.github.io/child_mort_interac_figu
 
 Mortality is expected to continue to decline in the future as shown in the @fig-forcast below.
 
-![Forecast of probability of death until 2030](images/Prediction.jpg){#fig-forcast width="333"}
+![Forecast of probability of death until 2030](images/Prediction.jpg){#fig-forcast width="528"}
 
 # Conclusion
 
