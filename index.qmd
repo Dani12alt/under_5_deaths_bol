@@ -44,33 +44,112 @@ For descriptive statistics, the median and interquartile range will be reported.
 
 Mortality in children under 5 years of age has decreased considerably in recent decades. However, in some parts of the world, this indicator remains unacceptably high, as shown in @fig-map below.
 
-![Map of child mortality in 2019](images/death%202019_1.jpg){#fig-map width="578"}
+![Map of child mortality in 2019](images/death%202019_1.jpg){#fig-map}
 
 In Bolivia, infant mortality was historically high but has declined considerably in recent years, and it is now below the world average but still above the regional average, as shown in @fig-evolution.
 
-![Evolution of under-5 children probability of death, 1950 to 2019](images/evolution.jpg){#fig-evolution width="512"}
+![Evolution of under-5 children probability of death, 1950 to 2019](images/evolution.jpg){#fig-evolution}
 
 Infant mortality is related to nation development (as assessed by SDI) and access to excellent health care (as evaluated by HAQ). This relationship is shown in @fig-sdi and @fig-haq
 
-![Probability of death vs Socio-Demographic Index](images/death%20vs%20sdi_1.jpg){#fig-sdi width="497"}
+![Probability of death vs Socio-Demographic Index](images/death%20vs%20sdi_1.jpg){#fig-sdi}
 
-![Probability of death vs Healthcare Access and Quality Index](images/death%20vs%20haq_1.jpg){#fig-haq width="504"}
+![Probability of death vs Healthcare Access and Quality Index](images/death%20vs%20haq_1.jpg){#fig-haq}
 
 Bolivia is considered a lower middle-income country. As shown in @fig-anova, lower middle-income countries tend to have higher mortality than upper middle-income countries and high-income countries. We can also observe that the higher the country's income, the lower the child mortality rate.
 
-![Probability of death according World bank classification](images/death%20by%20income.jpg){#fig-anova width="525"}
+![Probability of death according World bank classification](images/death%20by%20income.jpg){#fig-anova}
 
-Currently, the majority of deaths in children under 5 years of age are due to congenital anomalies, as shown in @fig-causes. This was not always the case; as shown in [Link 1](https://drive.google.com/file/d/1jKvjPcdLmWxSZFNBZgWIng_i6ZVeNveo/view?usp=sharing) and [Link 2](https://dani12alt.github.io/under_5_death/cause_of_death.html), historically, the main cause was pneumonia and respiratory tract infections.
+Currently, the majority of deaths in children under 5 years of age are due to congenital anomalies, as shown in @fig-causes. This was not always the case; as shown in @fig-gganim and @fig-inter, historically, the main cause was pneumonia and respiratory tract infections.
 
-![Causes of death in under-5 children, 2019](images/cause%20of%20death.jpg){#fig-causes width="553"}
+![Causes of death in under-5 children, 2019](images/cause%20of%20death.jpg){#fig-causes}
 
-Link 1: [Animated Figure](https://drive.google.com/file/d/1jKvjPcdLmWxSZFNBZgWIng_i6ZVeNveo/view?usp=sharing)
 
-Link 2: [Interactive Figure](https://dani12alt.github.io/child_mort_interac_figure/cause_of_death.html)
+
+![Causes of death in Bolivia, 1990 to 2019](images/gganim.gif){#fig-gganim}
+
+
+```{r}
+#| label: fig-inter
+#| fig-cap: "Interactive plot, causes of death in Bolivia, 1990 to 2019 "
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(plotly)
+library(readxl)
+library(ggtext)
+
+#import data and data cleaning
+
+causes_of_death_in_children <- read_csv("causes-of-death-in-children.csv")
+
+causes_of_death_in_children_bolivia <- causes_of_death_in_children %>%
+  filter(Code == "BOL") %>%
+  pivot_longer(
+    cols = Malaria:Syphilis,
+    names_to = "cause",
+    values_to = "number_of_deaths"
+  )
+
+causes_of_death_in_children_bolivia$cause <- as.factor(causes_of_death_in_children_bolivia$cause)
+
+causes_of_death_in_children_bolivia$cause <- reorder(causes_of_death_in_children_bolivia$cause, causes_of_death_in_children_bolivia$number_of_deaths)
+
+# making a ggplot
+
+interac <- causes_of_death_in_children_bolivia%>%
+  dplyr::rename(Disease = cause,
+                Number_of_Deaths = number_of_deaths) %>%
+  highlight_key(., ~Disease) %>%
+ggplot()+
+  geom_line(aes(x = Year, y = Number_of_Deaths, group = Disease), color = "#666666")+
+  theme_minimal()+
+  scale_x_continuous(#expand = c(0,0),
+                     breaks = seq(1991, 2019, 5))+
+  labs(
+    x = NULL,
+    y = "Number of Deaths",
+    title = "Causes of death in children under five years old\n Bolivia, 1990 to 2019"
+  )+
+  theme(
+    text = element_text(size = 15, color = "#666666"),
+    plot.title = element_text(size = 25, face = "bold", color = "#89004f"),
+    plot.title.position = "plot",
+    axis.line.y.right = element_blank(),
+    axis.line.x.top = element_blank()
+  )
+
+# making it interactive
+
+s <- attrs_selected(line = list(color = "#89004f", width = 5))
+
+ggplotly(p= interac, tooltip = c("Disease","Number_of_Deaths", "Year")) %>%
+  config(displayModeBar = FALSE) %>%
+  highlight(on = "plotly_hover",
+            opacityDim = 0.75,
+            selected = s) %>%
+  layout(
+    title = list(
+      x = 0,
+      xanchor = "left",
+      yanchor = "top",
+      y = 1,
+      xref = "container",
+      pad = list(t = 50, l = 10, b = 50)
+    ),
+    margin = list(t = 150),
+    hoverlabel = list(bgcolor = "#89004f",
+                      font = list(color = "white", size = 15))
+  )
+
+```
+
 
 Mortality is expected to continue to decline in the future as shown in the @fig-forcast below.
 
-![Forecast of probability of death until 2030](images/Prediction.jpg){#fig-forcast width="528"}
+![Forecast of probability of death until 2030](images/Prediction.jpg){#fig-forcast}
 
 # Conclusion
 
