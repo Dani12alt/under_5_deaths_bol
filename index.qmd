@@ -52,9 +52,11 @@ In Bolivia, infant mortality was historically high but has declined considerably
 
 Infant mortality is related to nation development (as assessed by SDI) and access to excellent health care (as evaluated by HAQ). This relationship is shown in @fig-sdi and @fig-haq
 
+::: {layout-ncol=2}
 ![Probability of death vs Socio-Demographic Index](images/death%20vs%20sdi_1.jpg){#fig-sdi}
 
 ![Probability of death vs Healthcare Access and Quality Index](images/death%20vs%20haq_1.jpg){#fig-haq}
+:::
 
 Bolivia is considered a lower middle-income country. As shown in @fig-anova, lower middle-income countries tend to have higher mortality than upper middle-income countries and high-income countries. We can also observe that the higher the country's income, the lower the child mortality rate.
 
@@ -115,7 +117,7 @@ ggplot()+
   )+
   theme(
     text = element_text(size = 15, color = "#666666"),
-    plot.title = element_text(size = 25, face = "bold", color = "#89004f"),
+    plot.title = element_text(size = 20, face = "bold", color = "#89004f"),
     plot.title.position = "plot",
     axis.line.y.right = element_blank(),
     axis.line.x.top = element_blank()
