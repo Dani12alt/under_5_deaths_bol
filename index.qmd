@@ -62,13 +62,15 @@ Mortality in children under 5 years of age has decreased considerably in recent 
 
 ![Map of child mortality in 2019](images/death%202019_1.jpg){#fig-map}
 
+Despite the challenges that still exist in addressing mortality in under-5 children, there have been some promising trends in recent years. One of these trends is the decrease in child mortality rates.
+
 Child mortality in Bolivia was quite high in the past, but it has decreased significantly in recent years and is currently lower than the global rate but still above the regional average, as shown in @fig-evolution.
 
 ![Evolution of under-5 children probability of death, 1950 to 2019](images/evolution.jpg){#fig-evolution}
 
 ## The influence of socioeconomic status and access to health care on child mortality
 
-Child mortality is highly related to nation-level development (as assessed by SDI) and access to quality health care (as evaluated by HAQ). This relationship is shown in @fig-sdi and @fig-haq
+Child mortality is highly related to nation-level development (as assessed by SDI) and access to quality health care (as evaluated by HAQ). In @fig-sdi and @fig-haq were we computed a Spearman's correlation coefficient to assess the linear relationship between HAQ and SDI, and child mortality. There was a negative correlation between the two variables.
 
 ::: {layout-ncol="2"}
 ![Probability of death vs Socio-Demographic Index](images/death%20vs%20sdi_1.jpg){#fig-sdi}
@@ -76,7 +78,7 @@ Child mortality is highly related to nation-level development (as assessed by SD
 ![Probability of death vs Healthcare Access and Quality Index](images/death%20vs%20haq_1.jpg){#fig-haq}
 :::
 
-Bolivia is considered a lower middle-income country. As shown in @fig-anova and @tbl-wilcox, lower middle-income countries tend to have higher mortality than upper middle-income countries and high-income countries. We can also observe that the higher the country's income, the lower the child mortality rate.
+Bolivia is considered a lower middle-income country.The Kurskal-Wallis rank sum test revealed that there was a statistically significant difference in child mortality between all groups, as shown in @fig-anova and @tbl-wilcox. Lower middle-income countries tend to have higher mortality than upper middle-income countries and high-income countries. We can also observe that the higher the country's income, the lower the child mortality rate.
 
 ![Probability of death according World bank classification](images/death%20by%20income.jpg){#fig-anova}
 
@@ -168,6 +170,8 @@ ggplotly(p= interac, tooltip = c("Disease","Number_of_Deaths", "Year")) %>%
   )
 
 ```
+
+@fig-inter also shows an enthusiastic development: the decreasing incidence of pediatric pneumonia. In Bolivia, like in other low-income economies, pneumonia was a major cause of death of children under the age of five. However, the frequency of pediatric pneumonia has reduced in recent years owing to increasing availability to immunizations like the pneumococcal conjugate vaccine and better diagnosis and treatment.
 
 ## Forecasting the Future of Child Mortality 
 
