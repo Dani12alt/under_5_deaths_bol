@@ -206,7 +206,7 @@ causes_of_death_in_children_bolivia %>%
     ")
   ) %>%
   e_datazoom(toolbox = FALSE) %>%
-  e_theme("essos") 
+  e_theme("essos")
 ```
 
 @fig-inter also shows an enthusiastic development: the decreasing incidence of pediatric pneumonia. In Bolivia, like in other low-income economies, pneumonia was a major cause of death of children under the age of five. However, the frequency of pediatric pneumonia has reduced in recent years owing to increasing availability to immunizations like the pneumococcal conjugate vaccine and better diagnosis and treatment.
