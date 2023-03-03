@@ -55,7 +55,7 @@ The data were examined for normality using the Shapiro-Wilk test; since they did
 
 For descriptive statistics, the median and interquartile range will be reported. Data were compared between more than two unpaired groups by performing the Kruskal-Wallis rank-sum test. The degree of linear relationship between two variables will be assessed by the Spearman rank correlation coefficient. The results were considered significant at p \< 0.05. The machine-learning algorithm [Prophet](https://facebook.github.io/prophet/) will be used to forecast the evolution of infant mortality in the future. Statistical analysis was performed using R software version 4.2.2 (R Development Core Team, 2022).
 
-# Results
+# Results and discussion 
 
 ## Mortality in children under 5 years
 
@@ -99,7 +99,11 @@ under_5_mortality %>%
 
 Despite the challenges that still exist in addressing mortality in under-5 children, there have been some promising trends in recent years. One of these trends is the decrease in child mortality rates.
 
+According to the GBD data and the WHO, Sub-Saharan Africa has the highest under-five mortality rate in the world. One of the leading causes of child mortality in Africa is infectious diseases, such as malaria, pneumonia, diarrhea, and HIV/AIDS. These diseases are often preventable and treatable with appropriate healthcare interventions and access to essential medicines. However, many African countries struggle with limited healthcare infrastructure and resources, leading to inadequate healthcare access and delivery for children. We can now appreciate the strong relationship between infant mortality and access to health care and the country's income level.
+
 Child mortality in Bolivia was quite high in the past, but it has decreased significantly in recent years and is currently lower than the global rate but still above the regional average, as shown in @fig-evolution.
+
+One of the main drivers of the decline in child mortality in in Bolivia, and Latin America in general, has been the expansion of healthcare coverage and services. This has led to increased access to essential health services such as prenatal care, skilled birth attendance, and vaccination programs, which have helped to reduce the incidence of preventable diseases in children. However, Bolivia still has a long way to go. 
 
 ![Evolution of under-5 children probability of death, 1950 to 2019](images/evolution.jpg){#fig-evolution}
 
@@ -118,12 +122,18 @@ Bolivia is considered a lower middle-income country.The Kurskal-Wallis rank sum 
 ![Probability of death according World bank classification](images/death%20by%20income.jpg){#fig-anova}
 
 |                     | High Income | Upper Middle Income | Lower Middle Income |
-|------------------|------------------|------------------|------------------|
+|-------------------|-----------------|-------------------|-------------------|
 | Upper Middle Income | \<0.0001    | \-                  | \-                  |
 | Lower Middle Income | \<0.0001    | \<0.0001            | \-                  |
 | Lower Income        | \<0.0001    | \<0.0001            | \<0.0001            |
 
 : Pairwise comparisons using Wilcoxon rank sum test with continuity correction {#tbl-wilcox}
+
+These findings are consistent with the current literature. Research has consistently shown that children from low-income families are at a higher risk of mortality compared to those from higher-income families. Poverty and lack of resources can limit access to healthcare, nutrition, and education, all of which are essential for the healthy development of children. Children from low-income families are more likely to experience malnutrition, infections, and other health problems that increase their risk of morbidity and mortality.
+
+Access to healthcare is another important factor that influences child mortality rates. Children who have access to healthcare services such as vaccinations, preventive care, and treatment for illnesses are more likely to survive and thrive. In contrast, children who lack access to healthcare services are at risk of developing severe illnesses that can lead to long-term health problems or even death. Limited access to healthcare services is often a result of poverty, geographic location, or social and cultural barriers that prevent families from seeking care. 
+
+Efforts to reduce child mortality rates require a comprehensive approach that addresses both the social determinants of health, such as poverty and inequality, and the availability and accessibility of healthcare services. Improving access to healthcare services for all children, regardless of their socioeconomic status or geographic location, is essential to reducing child mortality rates. Additionally, addressing the root causes of poverty and inequality, such as lack of education, job opportunities, and social protection, can help to improve the overall health and wellbeing of children and families.
 
 ## Causes of death
 
@@ -208,12 +218,26 @@ ggplotly(p= interac, tooltip = c("Disease","Number_of_Deaths", "Year")) %>%
 
 @fig-inter also shows an enthusiastic development: the decreasing incidence of pediatric pneumonia. In Bolivia, like in other low-income economies, pneumonia was a major cause of death of children under the age of five. However, the frequency of pediatric pneumonia has reduced in recent years owing to increasing availability to immunizations like the pneumococcal conjugate vaccine and better diagnosis and treatment.
 
+However, while deaths due to pneumonia and diarrhea have declined significantly, the same cannot be said for congenital abnormalities, which continue to account for a significant proportion of child deaths. Congenital abnormalities are a diverse group of disorders that arise during fetal development and can result in physical or mental disability, or even death. In many cases, these abnormalities are genetic and cannot be prevented, but in other cases, they may be related to environmental factors such as maternal exposure to toxins or infections during pregnancy.
+
+Despite advances in medical technology and prenatal care, the incidence of congenital abnormalities has remained relatively stable over the past few decades, and they continue to account for a significant proportion of child deaths worldwide (WHO, 2021). This is partly due to the complexity of these conditions, which can make diagnosis and treatment challenging, and also because many countries lack the resources and infrastructure needed to provide adequate care for affected children.
+
 ## Forecasting the Future of Child Mortality
 
 Mortality is expected to continue to decline in the future as shown in the @fig-forcast below.
+
+If current trends continue, we will see a further reduction in infant mortality over the next few years. The advent of new technologies and the advancement of medicine could lead to a reduction in infant deaths due to causes of infant mortality that we cannot control today, such as congenital anomalies. 
 
 ![Forecast of probability of death until 2030](images/Prediction.jpg){#fig-forcast}
 
 # Conclusion
 
 In conclusion, infant mortality is a substantial public health problem, especially in low-income nations. The leading causes of these fatalities include malnutrition, lack of access to mother and child healthcare, neonatal causes, and infectious illnesses. The GBD database is a significant resource for understanding the effects of this problem and may be used to guide the creation of policies and programs. It is crucial that all countries collaborate to solve this problem, with a particular emphasis on providing access to basic healthcare, nutrition, and maternity care.
+
+# References
+
+1. World Health Organization. (2021). Child Mortality. Retrieved from <https://www.who.int/news-room/fact-sheets/detail/child-mortality>
+
+2. Institute for Health Metrics and Evaluation. (2021). Global Burden of Disease. Retrieved from <http://www.healthdata.org/gbd>
+
+3. UNICEF. (2021). Child Mortality. Retrieved from <https://data.unicef.org/topic/child-survival/child-mortality/>
