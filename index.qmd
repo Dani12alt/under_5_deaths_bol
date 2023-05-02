@@ -12,8 +12,9 @@ title: "Trends in child mortality"
 library(tidyverse)
 library(plotly)
 library(readxl)
-library(ggtext) 
-library(echarts4r)
+library(ggtext)
+library(rnaturalearth)
+#library(echarts4r)
 library(htmlwidgets)
 
 causes_of_death_in_children <- read_csv("causes-of-death-in-children.csv")
@@ -62,19 +63,22 @@ For descriptive statistics, the median and interquartile range will be reported.
 
 Mortality in children under 5 years of age has decreased considerably in recent decades. However, in some parts of the world, this indicator remains unacceptably high, as shown in @fig-map below.
 
+
+
 ```{r}
 #| label: fig-map
 #| fig-cap: "Interactive Map of child mortality in 2019"
 #| echo: false
 #| message: false
 #| warning: false
+#| column: body-outset
 
 under_5_mortality$location_name <- as.factor(under_5_mortality$location_name)
 under_5_mortality$age_group_name <- as.factor(under_5_mortality$age_group_name)
 under_5_mortality$measure_name <- as.factor(under_5_mortality$measure_name)
 under_5_mortality$sex_name <- as.factor(under_5_mortality$sex_name)
 
-under_5_mortality %>% 
+child_df <- under_5_mortality %>% 
   filter(year_id == 2019 & sex_name == "both") %>%
   filter(location_name != "Global") %>%
   mutate(location_name_new = fct_recode(location_name, "Bolivia" = "Bolivia (Plurinational State of)",
@@ -83,17 +87,36 @@ under_5_mortality %>%
                                         "Vietnam" = "Viet Nam",
                                         "United States" = "United States of America",
                                         "Russia" = "Russian Federation",
-                                        "Korea" = "Republic of Korea",
-                                        "Dem. Rep. Korea" = "Democratic People's Republic of Korea",
-                                        "Dem. Rep. Congo"= "Democratic Republic of the Congo")) %>% 
+                                        "Korea, South" = "Republic of Korea",
+                                        "Korea, North" = "Democratic People's Republic of Korea",
+                                        "Congo, Democratic Republic of the"= "Congo")) %>% 
   select(-location_name) %>% 
-  rename(location_name = location_name_new, Probability_of_death = val) %>%
-  select(location_name, Probability_of_death) %>%
-  e_charts(location_name) %>% 
-  e_map(Probability_of_death) %>% 
-  e_visual_map(Probability_of_death,
-               inRange = list(color = c("#feebe2","#f768a1","#7a0177"))) %>%
-  e_tooltip() 
+  rename(COUNTRY = location_name_new, Child_mortality = val) %>%
+  select(COUNTRY, Child_mortality) %>%
+  mutate(Child_mortality = Child_mortality*1000)
+
+world_df <- read.csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv")
+
+df<- left_join(world_df, child_df, by = "COUNTRY")
+
+df$hover <- with(df, paste0("Child Mortlity:", '<br>',COUNTRY))
+
+plot_ly(df, 
+        type='choropleth', 
+        locations=df$CODE, z=df$Child_mortality, 
+        text=df$hover, colors = 'RdPu', 
+        stroke = I("black"), span = I(0.5)) %>%
+  colorbar(title = 'Child<br>Mortality') %>%
+  layout(
+    title = 'World Map of Child Mortality') %>%
+  config(displayModeBar = FALSE)
+
+
+#  e_charts(location_name) %>% 
+#  e_map(Probability_of_death) %>% 
+#  e_visual_map(Probability_of_death,
+#               inRange = list(color = c("#feebe2","#f768a1","#7a0177"))) %>%
+#  e_tooltip() 
   
 
 ```
@@ -123,7 +146,7 @@ Bolivia is considered a lower middle-income country.The Kurskal-Wallis rank sum 
 ![Probability of death according World bank classification](images/death%20by%20income.jpg){#fig-anova}
 
 |                     | High Income | Upper Middle Income | Lower Middle Income |
-|-------------------|-----------------|-------------------|-------------------|
+|------------------|------------------|------------------|------------------|
 | Upper Middle Income | \<0.0001    | \-                  | \-                  |
 | Lower Middle Income | \<0.0001    | \<0.0001            | \-                  |
 | Lower Income        | \<0.0001    | \<0.0001            | \<0.0001            |
@@ -150,7 +173,7 @@ Currently, the majority of deaths in children under 5 years of age are due to co
 #| echo: false
 #| message: false
 #| warning: false
-
+#| column: body-outset
 
 #data cleaning
 
@@ -169,44 +192,39 @@ causes_of_death_in_children_bolivia$cause <- reorder(causes_of_death_in_children
 causes_of_death_in_children_bolivia %>%
   dplyr::rename(Disease = cause,
                 Number_of_Deaths = number_of_deaths) %>%
-  group_by(Disease) %>%
-  e_chart(x = Year) %>%
-  e_line(Number_of_Deaths, Disease) %>%
-  #e_add_unnested(Disease) %>%
-  e_axis_labels(
-    x = "Year",
-    y = "Number of Deaths"
-  ) %>% 
-  e_x_axis(Year) %>%
-  e_legend(type = "scroll",
-           selected = list(
-             "Lower respiratory infections" = TRUE,
-             "Congenital birth defects" = TRUE,
-             "Diarrheal diseases" = TRUE,
-             "Malaria" = FALSE,
-             "Measles" = FALSE,
-             "Syphilis" = FALSE,
-             "Neoplasms" = FALSE,
-             "HIV/AIDS" = FALSE,
-             "Meningitis" = FALSE,
-             "Drowning" = FALSE,
-             "Tuberculosis" = FALSE,
-             "Whooping cough" = FALSE,
-             "Other neonatal disorders" = FALSE
-           )
-           #orient = "vertical"
-           ) %>%
-  e_tooltip(formatter = htmlwidgets::JS("
-      function(params){
-        return('<strong>' + params.name + 
-        '</strong><br />Year: ' + params.value[0] + 
-        '<br />Deaths: ' + params.value[1]
-        )
-      }
-    ")
+  mutate(Disease = fct_recode(Disease, "Neonatal encephalopathy" ="Neonatal encephalopathy due to asphyxia",
+             "Neonatal sepsis" = "Neonatal sepsis and other infections")) %>%
+  dplyr::filter(Disease %in% c("Lower respiratory infections", 
+                               "Neonatal preterm birth",
+                               "Diarrheal diseases",
+                               "Congenital birth defects",
+                               "Nutritional deficiencies",
+                               "Neonatal encephalopathy",
+                               "Neonatal sepsis and other infections",
+                               "Whooping cough",
+                               "Tuberculosis"
+                               )
+                ) %>%
+  plot_ly(
+    y = ~Number_of_Deaths,
+    x = ~Year,
+    type = "scatter",
+    mode = "lines+markers",
+    color = ~Disease,
+    colors = "PuRd",
+    line = list(width = 2
+                #,dash = 'dot'
+                )
   ) %>%
-  e_datazoom(toolbox = FALSE) %>%
-  e_theme("essos")
+    layout(
+      title = 'Evolution of the main causes of child mortality',
+      hovermode = "x unified",
+      xaxis = list(
+        rangeslider = list(type = "date")
+      ),
+      yaxis = list(title = "Number of deaths")
+    ) %>%
+  config(displayModeBar = FALSE)
 ```
 
 @fig-inter also shows an enthusiastic development: the decreasing incidence of pediatric pneumonia. In Bolivia, like in other low-income economies, pneumonia was a major cause of death of children under the age of five. However, the frequency of pediatric pneumonia has reduced in recent years owing to increasing availability to immunizations like the pneumococcal conjugate vaccine and better diagnosis and treatment.
